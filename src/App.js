@@ -2,6 +2,7 @@ import About from './about.js';
 import './App.css';
 import JsVariable from './jsVariables';
 import CommonDetail from './commonDetail';
+import State from './state';
 
 function getTime() {
   return (new Date()).toLocaleTimeString()
@@ -25,6 +26,9 @@ function App() {
       <CommonDetail number="1" name="kalai" />
 
       <CommonDetail number="2" name="mani" />
+
+      <h4>State</h4>
+      <State />
     </div>
   );
 }
