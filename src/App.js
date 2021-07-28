@@ -6,6 +6,7 @@ import State from "./state";
 import LifeCycle from "./lifecycle";
 import FormSearchList from "./formsEvents/formSearchList";
 import PasswordValidator from "./formsEvents/validator";
+import UserList from "./formsEvents/userList";
 
 function getTime() {
   return new Date().toLocaleTimeString();
@@ -43,6 +44,11 @@ function App() {
       <br />
       <hr />
       <PasswordValidator />
+
+      <br />
+      <br />
+      <hr />
+      <UserList />
     </div>
   );
 }
