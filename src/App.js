@@ -7,10 +7,29 @@ import LifeCycle from "./lifecycle";
 import FormSearchList from "./formsEvents/formSearchList";
 import PasswordValidator from "./formsEvents/validator";
 import UserList from "./formsEvents/userList";
+import Accordion from './components/accordion';
+import Counter from './components/counter';
+import SearchWiki from "./components/searchWiki.js";
+import UseEffectExample from "./components/useEffect";
 
 function getTime() {
   return new Date().toLocaleTimeString();
 }
+
+const AccordionItems = [
+  {
+    title: 'what is react ?',
+    content: 'React is a frontend js framework'
+  },
+  {
+    title: 'why use react ?',
+    content: 'React is a favourite js library'
+  },
+  {
+    title: 'how do we use react ?',
+    content: 'Can use React by creating components'
+  }
+]
 
 function App() {
   navigator.geolocation.getCurrentPosition(position => {
@@ -49,6 +68,35 @@ function App() {
       <br />
       <hr />
       <UserList />
+
+      <br />
+      <br />
+      <hr />
+      <Accordion AccordionItems={AccordionItems} />      
+      <br />
+      <br />
+
+      <br />
+      <br />
+      <hr />
+      <Counter />      
+      <br />
+      <br />
+
+      
+      <br />
+      <br />
+      <hr />
+      <SearchWiki />      
+      <br />
+      <br />
+
+      <br />
+      <br />
+      <hr />
+      <UseEffectExample />      
+      <br />
+      <br />      
     </div>
   );
 }
