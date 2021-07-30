@@ -12,11 +12,11 @@ const Accordion = ({ AccordionItems }) => {
 
     return (
       <div key={AccordionItem.title}>
-        <div className={"title" + ActiveClass} onClick={()=> TitleClicked(index)}>
+        <div className={"title " + ActiveClass} onClick={()=> TitleClicked(index)}>
           <i className="dropdown icon"></i>
           {AccordionItem.title}
         </div>
-        <div className={"content" + ActiveClass}>
+        <div className={"content " + ActiveClass}>
           <p>{AccordionItem.content}</p>
         </div>
       </div>

@@ -7,10 +7,11 @@ import LifeCycle from "./lifecycle";
 import FormSearchList from "./formsEvents/formSearchList";
 import PasswordValidator from "./formsEvents/validator";
 import UserList from "./formsEvents/userList";
-import Accordion from './components/accordion';
-import Counter from './components/counter';
+import Accordion from "./components/accordion";
+import Counter from "./components/counter";
 import SearchWiki from "./components/searchWiki.js";
 import UseEffectExample from "./components/useEffect";
+import Route from "./components/route";
 
 function getTime() {
   return new Date().toLocaleTimeString();
@@ -18,18 +19,18 @@ function getTime() {
 
 const AccordionItems = [
   {
-    title: 'what is react ?',
-    content: 'React is a frontend js framework'
+    title: "what is react ?",
+    content: "React is a frontend js framework"
   },
   {
-    title: 'why use react ?',
-    content: 'React is a favourite js library'
+    title: "why use react ?",
+    content: "React is a favourite js library"
   },
   {
-    title: 'how do we use react ?',
-    content: 'Can use React by creating components'
+    title: "how do we use react ?",
+    content: "Can use React by creating components"
   }
-]
+];
 
 function App() {
   navigator.geolocation.getCurrentPosition(position => {
@@ -37,66 +38,73 @@ function App() {
   });
   return (
     <div className="App">
-      <About />
-      <header className="App-header">
-        <p>Current Time : {getTime()}</p>
-      </header>
-      <JsVariable />
+      <Route path="/">
+        <About />
+        <header className="App-header">
+          <p>Current Time : {getTime()}</p>
+        </header>
+        <JsVariable />
 
-      <h4>Props and component reusablity</h4>
-      <CommonDetail number="1" name="kalai" />
+        <h4>Props and component reusablity</h4>
+        <CommonDetail number="1" name="kalai" />
 
-      <CommonDetail number="2" name="mani" />
+        <CommonDetail number="2" name="mani" />
 
-      <h4>State</h4>
-      <State />
+        <h4>State</h4>
+        <State />
 
-      <br />
-      <hr />
-      <LifeCycle />
+        <br />
+        <hr />
+        <LifeCycle />
 
-      <br />
-      <hr />
-      <FormSearchList />
+        <br />
+        <hr />
+        <FormSearchList />
 
-      <br />
-      <br />
-      <hr />
-      <PasswordValidator />
+        <br />
+        <br />
+        <hr />
+        <PasswordValidator />
 
-      <br />
-      <br />
-      <hr />
-      <UserList />
+        <br />
+        <br />
+        <hr />
+        <UserList />
+      </Route>
 
-      <br />
-      <br />
-      <hr />
-      <Accordion AccordionItems={AccordionItems} />      
-      <br />
-      <br />
+      <Route path="/counter">
+        <br />
+        <br />
+        <hr />
+        <Counter />
+        <br />
+        <br />
+      </Route>
 
-      <br />
-      <br />
-      <hr />
-      <Counter />      
-      <br />
-      <br />
-
-      
-      <br />
-      <br />
-      <hr />
-      <SearchWiki />      
-      <br />
-      <br />
+      <Route path="/search">
+        <br />
+        <br />
+        <hr />
+        <SearchWiki />
+        <br />
+        <br />
+      </Route>
 
       <br />
       <br />
       <hr />
-      <UseEffectExample />      
+      <UseEffectExample />
       <br />
-      <br />      
+      <br />
+
+      <Route path="/accordion">
+        <br />
+        <br />
+        <hr />
+        <Accordion AccordionItems={AccordionItems} />
+        <br />
+        <br />
+      </Route>
     </div>
   );
 }
