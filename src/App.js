@@ -12,6 +12,7 @@ import Counter from "./components/counter";
 import SearchWiki from "./components/searchWiki.js";
 import UseEffectExample from "./components/useEffect";
 import Route from "./components/route";
+import ReduxExample from "./Redux/ReduxExample";
 
 function getTime() {
   return new Date().toLocaleTimeString();
@@ -20,20 +21,20 @@ function getTime() {
 const AccordionItems = [
   {
     title: "what is react ?",
-    content: "React is a frontend js framework"
+    content: "React is a frontend js framework",
   },
   {
     title: "why use react ?",
-    content: "React is a favourite js library"
+    content: "React is a favourite js library",
   },
   {
     title: "how do we use react ?",
-    content: "Can use React by creating components"
-  }
+    content: "Can use React by creating components",
+  },
 ];
 
 function App() {
-  navigator.geolocation.getCurrentPosition(position => {
+  navigator.geolocation.getCurrentPosition((position) => {
     console.log(position);
   });
   return (
@@ -105,6 +106,13 @@ function App() {
         <br />
         <br />
       </Route>
+
+      <br />
+      <br />
+      <hr />
+      <ReduxExample />
+      <br />
+      <br />
     </div>
   );
 }
