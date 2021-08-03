@@ -6,6 +6,7 @@ import reportWebVitals from "./reportWebVitals";
 
 import { createStore } from "redux";
 import { Provider } from "react-redux";
+import { thunk } from "redux-thunk";
 
 //Selector
 const Action_1 = "Action 1 done";
@@ -21,7 +22,7 @@ export const DisableActionFunction = () => ({ type: DisableAction });
 
 export const initialValue = {
   txt: "",
-  setAction: false,
+  setAction: false
 };
 
 //Reducer
@@ -30,27 +31,27 @@ const ReducerAction = (state = initialValue, actions) => {
     case Action_1:
       return {
         ...state,
-        txt: "Action 1 is returned successfully",
+        txt: "Action 1 is returned successfully"
       };
     case Action_2:
       return {
         ...state,
-        txt: "Action 2 is returned successfully",
+        txt: "Action 2 is returned successfully"
       };
     case EnableAction:
       return {
         setAction: true,
-        txt: "Action is enabled",
+        txt: "Action is enabled"
       };
     case DisableAction:
       return {
         setAction: false,
-        txt: "Action is disabled",
+        txt: "Action is disabled"
       };
     default:
       return {
         ...state,
-        txt: "No action to return. kindly enable action functions",
+        txt: "No action to return. kindly enable action functions"
       };
   }
 };

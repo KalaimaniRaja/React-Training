@@ -13,6 +13,7 @@ import SearchWiki from "./components/searchWiki.js";
 import UseEffectExample from "./components/useEffect";
 import Route from "./components/route";
 import ReduxExample from "./Redux/ReduxExample";
+import ReduxClassExample from "./Redux/ReduxClassExample";
 
 function getTime() {
   return new Date().toLocaleTimeString();
@@ -111,6 +112,13 @@ function App() {
       <br />
       <hr />
       <ReduxExample />
+      <br />
+      <br />
+
+      <br />
+      <br />
+      <hr />
+      <ReduxClassExample />
       <br />
       <br />
     </div>
