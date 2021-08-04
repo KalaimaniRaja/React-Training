@@ -14,6 +14,7 @@ import UseEffectExample from "./components/useEffect";
 import Route from "./components/route";
 import ReduxExample from "./Redux/ReduxExample";
 import ReduxClassExample from "./Redux/ReduxClassExample";
+import Header from "./components/Header";
 
 function getTime() {
   return new Date().toLocaleTimeString();
@@ -40,6 +41,11 @@ function App() {
   });
   return (
     <div className="App">
+      <Header />
+
+      <br />
+      <br />
+      <hr />
       <Route path="/">
         <About />
         <header className="App-header">
