@@ -15,6 +15,7 @@ import Route from "./components/route";
 import ReduxExample from "./Redux/ReduxExample";
 import ReduxClassExample from "./Redux/ReduxClassExample";
 import Header from "./components/Header";
+import Wizard from "./ReduxForm/wizard";
 
 function getTime() {
   return new Date().toLocaleTimeString();
@@ -127,6 +128,8 @@ function App() {
       <ReduxClassExample />
       <br />
       <br />
+
+      <Wizard />
     </div>
   );
 }
