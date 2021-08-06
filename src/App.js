@@ -11,11 +11,20 @@ import Accordion from "./components/accordion";
 import Counter from "./components/counter";
 import SearchWiki from "./components/searchWiki.js";
 import UseEffectExample from "./components/useEffect";
-import Route from "./components/route";
+// import Route from "./components/route";
+import { BrowserRouter as Router, Route } from "react-router-dom";
+
 import ReduxExample from "./Redux/ReduxExample";
 import ReduxClassExample from "./Redux/ReduxClassExample";
 import Header from "./components/Header";
 import Wizard from "./ReduxForm/wizard";
+
+import StreamCreate from './components/streams/streamcreate';
+import StreamDelete from './components/streams/streamdelete';
+import StreamEdit from './components/streams/streamedit';
+import StreamList from './components/streams/streamlist';
+import StreamShow from './components/streams/streamshow';
+import history from './history';
 
 function getTime() {
   return new Date().toLocaleTimeString();
@@ -42,6 +51,7 @@ function App() {
   });
   return (
     <div className="App">
+    <Router history={history}>
       <Header />
 
       <br />
@@ -130,6 +140,15 @@ function App() {
       <br />
 
       <Wizard />
+
+      <div>
+          <Route path="/" exact component={StreamList} />
+          <Route path="/streams/new" exact component={StreamCreate} />
+          <Route path="/streams/edit/:id" exact component={StreamEdit} />
+          <Route path="/streams/delete/:id" exact component={StreamDelete} />
+          <Route path="/streams/show/:id" exact component={StreamShow} />
+        </div>
+      </Router>
     </div>
   );
 }
