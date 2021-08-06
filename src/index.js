@@ -3,10 +3,10 @@ import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
-
 import { createStore, applyMiddleware, compose } from "redux";
 import { Provider } from "react-redux";
 import reduxThunk from 'redux-thunk';
+import reducers from './reducers';
 
 //Selector
 const Action_1 = "Action 1 done";
@@ -60,7 +60,7 @@ const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
 //Store
 let store = createStore(
-  ReducerAction,  
+  reducers,  
   composeEnhancers(applyMiddleware(reduxThunk))
   );
 // store.subscribe(() => {
